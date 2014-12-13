@@ -6,6 +6,8 @@
     </label>
   </div>
   <% if action.description.present? %>
-    <div class="well well-sm " style="<%= 'display:none' if action.done %>"><%= auto_link action.description %></div>
+    <div class="well well-sm " style="<%= 'display:none' if action.done %>">
+      <%= auto_link simple_format(action.description) %>
+    </div>
   <% end %>
 </li>
