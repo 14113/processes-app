@@ -5,7 +5,7 @@
       Actions
     </div>
     <ul class="list-group">
-      <%= f.fields_for :actions do |builder| %>
+      <%= f.fields_for :actions, @iteration.actions.order('id ASC') do |builder| %>
         <%= render "action_fields", f: builder, action: builder.object %>
       <% end %>
     </ul>

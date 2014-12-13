@@ -1,5 +1,5 @@
 class Iteration < ActiveRecord::Base
-  has_many :actions, -> { order('id ASC') }
+  has_many :actions
   has_many :todos, through: :actions
   belongs_to :trip
 
