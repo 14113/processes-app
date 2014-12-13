@@ -1,11 +1,14 @@
 <%= nested_form_for [@trip,@iteration], remote: true do |f| %>
   <div class="panel panel-default">
-    <div class="panel-heading">Actions</div>
-      <ul class="list-group">
-        <%= f.fields_for :actions do |builder| %>
-          <%= render "action_fields", f: builder, action: builder.object %>
-        <% end %>
-      </ul>
+    <div class="panel-heading">
+      <span class="badge"><%= @iteration.actions.size %></span>
+      Actions
+    </div>
+    <ul class="list-group">
+      <%= f.fields_for :actions do |builder| %>
+        <%= render "action_fields", f: builder, action: builder.object %>
+      <% end %>
+    </ul>
   </div>
 <% end %>
 
