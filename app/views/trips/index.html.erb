@@ -1,0 +1,14 @@
+<h1>Trips</h1>
+
+<div class="list-group">
+  <% @trips.each do |trip| %>
+    <%= link_to trip_iterations_path(trip), class: "list-group-item" do %>
+      <span class="badge"><%= trip.uncomplete_actions %> / <%= trip.todos.size %></span>
+      <%= trip.name %>
+    <% end %>
+  <% end %>
+</div>
+
+<br>
+
+<%= link_to 'New Trip', new_trip_path, class: 'btn btn-default' %>

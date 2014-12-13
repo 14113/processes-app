@@ -1,0 +1,8 @@
+development: &development
+  adapter: mysql2
+  encoding: utf8
+  database: processes_development
+  pool: 5
+  username: root
+  password:
+  reconnect: true

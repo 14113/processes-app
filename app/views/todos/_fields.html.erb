@@ -1,0 +1,9 @@
+<div class="form-group text-right">
+  <%= f.link_to_remove "x", tabindex: "-1" %>
+  <%= f.text_field :name, class: 'form-control', placeholder: 'Action' %>
+  <div class="btn btn-default btn-xs description">add description</div>
+</div>
+<div class="form-group" style="<%= 'display: none' if f.object.description.blank? %>">
+  <%= f.text_area :description, :rows => 3, placeholder: 'Description', class: 'form-control' %>
+</div>
+<hr />

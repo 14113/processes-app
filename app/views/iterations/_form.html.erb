@@ -1,0 +1,49 @@
+<%= nested_form_for [@trip,@iteration], remote: true do |f| %>
+  <div class="panel panel-default">
+    <div class="panel-heading">Actions</div>
+      <ul class="list-group">
+        <%= f.fields_for :actions do |builder| %>
+          <%= render "action_fields", f: builder, action: builder.object %>
+        <% end %>
+      </ul>
+  </div>
+<% end %>
+
+<%= link_to 'All Done', finished_trip_iteration_path(@trip, @iteration), class: 'btn btn-primary' %>
+
+<br />
+
+<% content_for :sidebar do %>
+<div class="panel panel-default">
+  <div class="panel-heading">Progress</div>
+  <div class="panel-body">
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: 60%;">
+        <span class="sr-only">60% Complete</span>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+
+<script>
+  jQuery(document).ready(function($) {
+    $(".edit_iteration").change(function(){
+      $(this).submit();
+    });
+
+    $("input[type='checkbox']").click(function(){
+      var parent = $(this).parents('.list-group-item');
+      var that = $(this);
+      if (that.is(':checked')){
+        parent.addClass('disabled');
+        parent.find('span').addClass('line-through');
+        parent.find('.well').hide();
+      }else{
+        parent.removeClass('disabled');
+        parent.find('span').removeClass('line-through');
+        parent.find('.well').show();
+      }
+    });
+  });
+</script>

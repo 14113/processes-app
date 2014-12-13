@@ -1,0 +1,11 @@
+<li class="list-group-item <%= 'disabled' if action.done %>">
+  <div class="checkbox">
+    <label>
+      <%= f.check_box :done %>
+      <span class="<%= 'line-through' if action.done %>"><%= action.name %></span>
+    </label>
+  </div>
+  <% if action.description.present? %>
+    <div class="well well-sm " style="<%= 'display:none' if action.done %>"><%= auto_link action.description %></div>
+  <% end %>
+</li>

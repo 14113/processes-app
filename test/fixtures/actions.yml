@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  iteration_id: 
+  todo_id: 
+  done: false
+
+two:
+  iteration_id: 
+  todo_id: 
+  done: false

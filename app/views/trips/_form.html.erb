@@ -1,0 +1,39 @@
+<%= nested_form_for @trip do |f| %>
+  <% if @trip.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@trip.errors.count, "error") %> prohibited this trip from being saved:</h2>
+
+      <ul>
+      <% @trip.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">Todos</div>
+    <div class="panel-body">
+      <%= f.fields_for :todos do |builder| %>
+        <%= render "todos/fields", :f => builder %>
+      <% end %>
+      <%= f.link_to_add "Add a todo", :todos, class: 'btn btn-default' %>
+    </div>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Submit', class: 'btn btn-default' %>
+  </div>
+<% end %>
+
+<script>
+  jQuery(document).ready(function($) {
+    $('.description').on('click',function(){
+      $(this).parent().next().show();
+      $(this).hide();
+    });
+  });
+</script>
