@@ -1,5 +1,5 @@
 class Trip < ActiveRecord::Base
-  has_many :todos
+  has_many :todos, -> { order('position ASC') }
   has_many :iterations
 
   accepts_nested_attributes_for :todos, :reject_if => lambda { |a| a[:name].blank? }

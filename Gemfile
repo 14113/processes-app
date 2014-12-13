@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.1.2"
+ruby '2.1.2'
 
 gem 'rails', '4.1.0'
 gem 'pg'
@@ -10,17 +10,18 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
-gem "therubyracer"
-gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-gem "twitter-bootstrap-rails"
-gem "nested_form"
+gem 'therubyracer'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
+gem 'nested_form'
 gem 'rails_autolink'
+gem 'acts_as_list'
 
 group :development do
   gem 'quiet_assets'
   gem 'mysql2'
   gem 'pry'
-  gem "heroku"
+  gem 'heroku'
   gem 'better_errors'
   gem 'binding_of_caller'
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141212164917) do
+ActiveRecord::Schema.define(version: 20141213172446) do
 
   create_table "actions", force: true do |t|
     t.integer  "iteration_id"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20141212164917) do
     t.integer  "trip_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "position"
   end
 
   add_index "todos", ["trip_id"], name: "index_todos_on_trip_id", using: :btree
